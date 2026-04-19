@@ -1,0 +1,22 @@
+{
+  "name": "ai-digital-twin-smart-cities",
+  "version": "1.0.0",
+  "description": "AI-powered Digital Twin system for smart city infrastructure management",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "digital-twin",
+    "smart-cities",
+    "ai",
+    "iot",
+    "real-time-monitoring"
+  ],
+  "author": "Your Team",
+  "license": "MIT",
+  "engines": {
+    "node": "14.x"
+  }
+}
