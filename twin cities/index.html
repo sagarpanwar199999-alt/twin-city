@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Digital Twin for Smart Cities - Hackathon</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.1/MarkerCluster.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.1/MarkerCluster.Default.min.css" />
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-robot"></i>
+                <span>Smart Cities AI</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#dashboard" class="nav-link">Dashboard</a>
+                <a href="#map" class="nav-link">Map</a>
+                <a href="#tech-stack" class="nav-link">Tech Stack</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="grid-bg"></div>
+        <div class="floating-particles"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title" data-text="AI Digital Twin for Smart Cities">
+                AI Digital Twin for Smart Cities
+            </h1>
+            <p class="hero-subtitle">Real-time simulation, prediction, and optimization of urban life</p>
+            <button class="cta-button" id="ctaButton">
+                <span>Explore Simulation</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
+            <div class="hero-stats">
+                <div class="stat">
+                    <h3>1000+</h3>
+                    <p>Data Points</p>
+                </div>
+                <div class="stat">
+                    <h3>99.9%</h3>
+                    <p>Accuracy</p>
+                </div>
+                <div class="stat">
+                    <h3>24/7</h3>
+                    <p>Monitoring</p>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-cube"></div>
+            <div class="floating-cube cube-2"></div>
+            <div class="floating-cube cube-3"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">What is a Digital Twin?</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>A <span class="highlight">Digital Twin</span> is a virtual replica of physical systems, processes, and environments. In the context of smart cities, it enables real-time monitoring, predictive analytics, and optimization of urban infrastructure.</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Real-Time Data Analysis</h4>
+                            <p>Monitor live metrics from your city</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-brain"></i>
+                            <h4>AI-Powered Predictions</h4>
+                            <p>Forecast trends and prevent issues</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-cogs"></i>
+                            <h4>Smart Optimization</h4>
+                            <p>Automatically improve city systems</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Risk Management</h4>
+                            <p>Identify and mitigate urban risks</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="network-diagram">
+                        <div class="node node-1">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <div class="node node-2">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="node node-3">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="node node-4">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <svg class="connections"></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Advanced Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-traffic-light"></i>
+                    </div>
+                    <h3>Smart Traffic Management</h3>
+                    <p>AI-optimized real-time traffic control and predictive route planning to reduce congestion by 40%.</p>
+                    <div class="card-badge">🚦</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Energy Optimization</h3>
+                    <p>Smart grid management and renewable energy integration for sustainable urban power distribution.</p>
+                    <div class="card-badge">⚡</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Pollution Monitoring</h3>
+                    <p>Real-time air and water quality tracking with predictive analytics for environmental protection.</p>
+                    <div class="card-badge">🌍</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Public Safety AI</h3>
+                    <p>Intelligent surveillance and emergency response optimization for safer communities.</p>
+                    <div class="card-badge">🔐</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-satellite"></i>
+                    </div>
+                    <h3>IoT Integration</h3>
+                    <p>Seamless connectivity with thousands of sensors across the urban infrastructure network.</p>
+                    <div class="card-badge">📡</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>5G Connectivity</h3>
+                    <p>Ultra-fast, low-latency communication for real-time decision making across the city.</p>
+                    <div class="card-badge">📶</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="dashboard">
+        <div class="container">
+            <h2 class="section-title">Live Simulation Dashboard</h2>
+            <div class="dashboard-grid">
+                <div class="dashboard-panel large">
+                    <h3>Traffic Flow Status</h3>
+                    <canvas id="trafficChart"></canvas>
+                </div>
+                <div class="dashboard-panel">
+                    <h3>Energy Distribution</h3>
+                    <canvas id="energyChart"></canvas>
+                </div>
+                <div class="dashboard-panel">
+                    <h3>Air Quality Index</h3>
+                    <div class="quality-meter">
+                        <div class="meter-value">72</div>
+                        <div class="meter-label">Good</div>
+                        <svg class="meter-circle" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45"></circle>
+                        </svg>
+                    </div>
+                </div>
+                <div class="dashboard-panel">
+                    <h3>Active IoT Devices</h3>
+                    <div class="device-counter">
+                        <div class="counter-display">2,847</div>
+                        <div class="counter-label">Connected Devices</div>
+                    </div>
+                </div>
+                <div class="dashboard-panel large">
+                    <h3>City Population Density</h3>
+                    <canvas id="populationChart"></canvas>
+                </div>
+                <div class="dashboard-panel">
+                    <h3>System Health</h3>
+                    <div class="health-indicator">
+                        <div class="health-row">
+                            <span>CPU Usage</span>
+                            <div class="health-bar"><div class="health-fill" style="width: 65%;"></div></div>
+                        </div>
+                        <div class="health-row">
+                            <span>Data Processing</span>
+                            <div class="health-bar"><div class="health-fill" style="width: 82%;"></div></div>
+                        </div>
+                        <div class="health-row">
+                            <span>Network Load</span>
+                            <div class="health-bar"><div class="health-fill" style="width: 55%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section id="map" class="map-section">
+        <div class="container">
+            <h2 class="section-title">Interactive Smart City Map - India</h2>
+            <div class="map-search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="mapSearch" placeholder="Search cities or infrastructure (e.g., Delhi, Traffic, Energy)...">
+                    <button id="searchBtn" class="search-btn">Search</button>
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="traffic">Traffic</button>
+                    <button class="filter-btn" data-filter="energy">Energy</button>
+                    <button class="filter-btn" data-filter="air">Air Quality</button>
+                    <button class="filter-btn" data-filter="safety">Safety</button>
+                    <button class="filter-btn" data-filter="iot">IoT</button>
+                    <button class="filter-btn" data-filter="water">Water</button>
+                </div>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+            <div class="map-wrapper">
+                <div id="cityMap" class="city-map"></div>
+                <div class="map-legend">
+                    <h3>Map Legend</h3>
+                    <div class="legend-item">
+                        <span class="legend-color traffic"></span>
+                        <span>Traffic Management</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color energy"></span>
+                        <span>Energy Station</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color air"></span>
+                        <span>Air Quality Monitor</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color safety"></span>
+                        <span>Safety Control</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color iot"></span>
+                        <span>IoT Sensor</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color water"></span>
+                        <span>Water Management</span>
+                    </div>
+                </div>
+                <div class="map-info-panel">
+                    <h3>Real-Time City Data</h3>
+                    <div class="info-stat">
+                        <span>Active Sensors:</span>
+                        <span class="info-value" id="activeSensors">2,847</span>
+                    </div>
+                    <div class="info-stat">
+                        <span>Data Points/min:</span>
+                        <span class="info-value" id="dataPoints">15,432</span>
+                    </div>
+                    <div class="info-stat">
+                        <span>System Status:</span>
+                        <span class="info-value online">● Online</span>
+                    </div>
+                    <div class="info-stat">
+                        <span>Coverage Area:</span>
+                        <span class="info-value">125 km²</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack Section -->
+    <section id="tech-stack" class="tech-stack">
+        <div class="container">
+            <h2 class="section-title">Technology Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-category">AI/ML</div>
+                    <div class="tech-items">
+                        <span class="tech-badge">TensorFlow</span>
+                        <span class="tech-badge">PyTorch</span>
+                        <span class="tech-badge">Scikit-learn</span>
+                    </div>
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">IoT</div>
+                    <div class="tech-items">
+                        <span class="tech-badge">MQTT</span>
+                        <span class="tech-badge">CoAP</span>
+                        <span class="tech-badge">Zigbee</span>
+                    </div>
+                    <i class="fas fa-satellite"></i>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Cloud</div>
+                    <div class="tech-items">
+                        <span class="tech-badge">AWS</span>
+                        <span class="tech-badge">Azure</span>
+                        <span class="tech-badge">GCP</span>
+                    </div>
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Big Data</div>
+                    <div class="tech-items">
+                        <span class="tech-badge">Spark</span>
+                        <span class="tech-badge">Hadoop</span>
+                        <span class="tech-badge">Kafka</span>
+                    </div>
+                    <i class="fas fa-database"></i>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Web</div>
+                    <div class="tech-items">
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">WebSocket</span>
+                    </div>
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Data Viz</div>
+                    <div class="tech-items">
+                        <span class="tech-badge">D3.js</span>
+                        <span class="tech-badge">Chart.js</span>
+                        <span class="tech-badge">Mapbox</span>
+                    </div>
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section id="use-cases" class="use-cases">
+        <div class="container">
+            <h2 class="section-title">Real-World Use Cases</h2>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Smart Governance</h3>
+                    <p>Data-driven decision making for city planning and resource allocation with AI-powered insights.</p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Urban Planning</h3>
+                    <p>Simulate infrastructure changes and predict their impact before implementation.</p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Disaster Management</h3>
+                    <p>Early warning systems and emergency response optimization for natural disasters.</p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainability</h3>
+                    <p>Carbon footprint tracking and optimization for achieving net-zero urban environments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email</h4>
+                        <p>hello@smartcitiesai.com</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Location</h4>
+                        <p>Innovation District, Tech City</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <h4>Phone</h4>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>AI Digital Twin</h4>
+                    <p>Smart Cities Hackathon 2026</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#dashboard">Dashboard</a></li>
+                        <li><a href="#tech-stack">Technology</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AI Digital Twin for Smart Cities. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.1/leaflet.markercluster.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
